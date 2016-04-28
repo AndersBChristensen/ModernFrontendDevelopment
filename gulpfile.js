@@ -1,13 +1,16 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var mainBowerFiles = require('main-bower-files');
 
 var config = {
     bootstrapDir: './bower_components/bootstrap-sass',
     publicDir: './public',
+    sourceDir: './source'
 };
 
 gulp.task('css', function() {
-    return gulp.src(config.bootstrapDir + '/sass/app.scss')
+    return gulp.src(config.sourceDir + '/sass/app.scss')
     .pipe(sass({
         includePaths: [config.bootstrapDir + '/assets/stylesheets'],
     }))
@@ -19,10 +22,22 @@ gulp.task('fonts', function() {
     .pipe(gulp.dest(config.publicDir + '/fonts'));
 });
 
-gulp.task('default', ['css', 'fonts']);
+gulp.task('vendor.js', function () {
+    var allBowerFiles = mainBowerFiles();
+    var jsBowerFiles = allBowerFiles.filter(function (file) {
+        return -1 !== file.indexOf('.js');
+    });
 
+    console.log(jsBowerFiles);
+
+    return (gulp.src(jsBowerFiles)
+        .pipe(concat('vendor.js'))
+        .pipe(gulp.dest(config.publicDir + '/assets')));
+});
+
+gulp.task('default', ['css', 'fonts', 'vendor.js']);
 
 //Watch task
 gulp.task('default',function() {
-    gulp.watch(config.bootstrapDir + '/sass/**/*.scss',['css']);
+    gulp.watch(config.sourceDir + '/sass/**/*.scss',['css']);
 });
