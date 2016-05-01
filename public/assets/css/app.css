@@ -6323,17 +6323,18 @@ body {
   margin-top: 24px;
   margin-bottom: 12px;
   height: 40px;
-  width: 90%;
+  width: 100%;
   background-color: white;
   display: block; }
 
 #textInputBox p {
-  padding: 13px; }
+  padding: 13px;
+  width: -1%; }
 
 #searchField {
   float: right;
   height: 100%;
-  width: 65%;
+  width: 50%;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -6378,7 +6379,7 @@ body {
   -ms-border-radius: 0.5em;
   border-radius: 0.5em; }
 
-#customBtn {
+.customBtn {
   padding: 3px;
   padding-right: 10px;
   padding-bottom: 15px;
@@ -6391,16 +6392,19 @@ body {
 
 #headerRow2 {
   background-color: #406884; }
-  #headerRow2 #pngCenter {
+  #headerRow2 img {
+    height: 25px;
+    width: 25px; }
+  #headerRow2 #pngCenter1, #headerRow2 #pngCenter2, #headerRow2 #pngCenter3, #headerRow2 #pngCenter4, #headerRow2 #pngCenter5, #headerRow2 #pngCenter6 {
     position: relative;
     left: 0;
     top: 0; }
-    #headerRow2 #pngCenter img {
+    #headerRow2 #pngCenter1 img, #headerRow2 #pngCenter2 img, #headerRow2 #pngCenter3 img, #headerRow2 #pngCenter4 img, #headerRow2 #pngCenter5 img, #headerRow2 #pngCenter6 img {
       position: relative;
       top: 20px; }
   #headerRow2 .container .row #header2 .col-md-2 .center-block {
     max-width: 400px; }
-    #headerRow2 .container .row #header2 .col-md-2 .center-block p {
+    #headerRow2 .container .row #header2 .col-md-2 .center-block a {
       color: white; }
   #headerRow2 .container .row #header2 .col-md-6 p {
     color: gray;
@@ -6610,6 +6614,8 @@ body {
     #latestProducts .thumbnail #p2 {
       color: gray;
       margin-bottom: 5px; }
+      #latestProducts .thumbnail #p2 a {
+        text-decoration: line-through; }
     #latestProducts .thumbnail #p3 {
       color: #379AFE;
       font: 100% "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
@@ -6642,7 +6648,7 @@ body {
         margin: 0;
         color: white;
         font: 100% "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
-      #topFooterRow .col-md-4 .center-block table #p2 {
+      #topFooterRow .col-md-4 .center-block table #p2-1, #topFooterRow .col-md-4 .center-block table #p2-2, #topFooterRow .col-md-4 .center-block table #p2-3 {
         font: 100% "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 
 #middleFooterRow {
@@ -6690,12 +6696,12 @@ body {
       width: 40px;
       margin-right: 5px; }
 
-#list ul {
+.list ul {
   margin: 0.75em 0;
   padding: 0 1em;
   list-style: none; }
 
-#list li:before {
+.list li:before {
   content: "";
   border-color: transparent #379AFF;
   border-style: solid;
@@ -6714,6 +6720,11 @@ body {
     height: 40px; }
   .searchWrapper input[type="text"] {
     height: 40px; }
+
+#center1, #center2, #center3, #center4, #center5, #center6 {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 .modal-content img {
   height: 40px;
@@ -6748,3 +6759,26 @@ body {
     margin-top: 2%; }
   #footerBottomRow .col-md-4 {
     background-color: #2C3942; }
+
+.fixedElement {
+  background-color: #c0c0c0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; }
+
+#productRow {
+  margin-top: 4%;
+  margin-bottom: 4%;
+  background-color: white;
+  padding: 10px; }
+  #productRow a {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold; }
+  #productRow p {
+    color: gray; }
+  #productRow h1 {
+    color: #1B99FD; }
+  #productRow .col-md-6 img {
+    border: 2px; }

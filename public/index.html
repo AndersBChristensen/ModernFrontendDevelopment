@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyShop">
+<html lang="en" data-ng-app="MyShop">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +17,18 @@
   <script src="assets/vendor.js"></script>
   <!-- JavaScript -->
   <script src = "app.js"></script> 
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   
 </head>
-<body ng-controller="ShopController">
+<body>
 
-  <div class="container-fluid" id="headerRow1">
+<div class="fixedElement" id="fixedElement" style="display:none;">
+  <p>Hello</p>
+</div>
+
+<header data-ng-controller="BasketController">
+<div class="container-fluid" id="headerRow1">
    <div class="container">
     <div class="row">
       <div id="header1">
@@ -39,7 +46,7 @@
       <div id="header2">
         <div class="col-md-2">
           <div class="center-block">
-            <p href="/index.html">MOCart</p>
+            <p><a href="index.html#/">MOCart</a></p>
           </div>
         </div>
         <div class="col-md-6">
@@ -49,32 +56,32 @@
           </div>
         </div> 
         <div class="col-md-1">
-          <div id="pngCenter">
-            <img src="http://andersbchristensen.com/cart-73-24.png" style="left: 16px; " /> <br/>
+          <div id="pngCenter1">
+            <img src="http://andersbchristensen.com/accountLogo.png" style="left: 16px;" alt="" /> <br/>
             <p>MY ACCOUNT</p>
-            <div id="pngCenter">
+            <div id="pngCenter2">
             </div>
           </div>
         </div> 
         <div class="col-md-1">
-          <div id="pngCenter">
-            <img src="http://andersbchristensen.com/cart-73-24.png" style="left: 19px;" /> <br/>
+          <div id="pngCenter3">
+            <img src="http://andersbchristensen.com/trackOrderLogo.png" style="left: 19px;" alt="" /> <br/>
             <p>TRACK ORDER</p>
-            <div id="pngCenter">
+            <div id="pngCenter4">
             </div>
           </div>
         </div>
         <div class="col-md-1">
-          <div id="pngCenter">
-            <img src="http://andersbchristensen.com/cart-73-24.png" style="left: 20px;" /> <br/>
+          <div id="pngCenter5">
+            <img src="http://andersbchristensen.com/loginLogo.png" style="left: 20px;" alt="" /> <br/>
             <p style="padding-left: 20px;">LOGIN</p>
-            <div id="pngCenter">
+            <div id="pngCenter6">
             </div>
           </div>
         </div>
         <div class="col-md-1">
           <div class="center-block" style="margin-top: 18px;">
-            <button type="button" id="cartButton" data-toggle="modal" data-target="#myModal">{{basket.length}}</button>
+            <button type="button" id="cartButton" data-toggle="modal" data-target="#myModal">{{basketCount}}</button>
           </div>
         </div>
       </div> 
@@ -92,10 +99,10 @@
       </div> 
       <div class="col-md-10">
         <div class="center-block">
-          <button type="button" id="customBtn">FASHION STORE</button>
-          <button type="button" id="customBtn">BOOKS & MEDIA</button>
-          <button type="button" id="customBtn">CLEARANCE SALE</button>
-          <button type="button" id="customBtn">MOBILE PHONES</button>
+          <button type="button" class="customBtn">FASHION STORE</button>
+          <button type="button" class="customBtn">BOOKS & MEDIA</button>
+          <button type="button" class="customBtn">CLEARANCE SALE</button>
+          <button type="button" class="customBtn">MOBILE PHONES</button>
         </div>
       </div>  
     </div>
@@ -107,217 +114,114 @@
     <div class="row">
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center6">
+          <tr>
             <td>
-              <img src="https://image.freepik.com/free-icon/airplane_318-48064.png"/>
+              <img src="http://andersbchristensen.com/airplaneLogo.png" alt=""/>
             </td>
             <td>
               <p>FREE SHIPPING</p>
               <p>In Order Min $200</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>  
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center5">
+          <tr>
             <td>
-              <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Ecommerce-Return-Purchase-icon.png"/>
+              <img src="http://andersbchristensen.com/clockLogo.png" alt=""/>
             </td>
             <td>
               <p>30-DAYS RETURNS</p>
               <p>Money Back Guarentee</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center4">
+          <tr>
             <td>
-              <img src="http://simpleicon.com/wp-content/uploads/phone-support.png"/>
+              <img src="http://andersbchristensen.com/supportLogo.png" alt=""/>
             </td>
             <td>
               <p>24/7 SUPPORT</p>
               <p>Lifetime Support</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div> 
+</header>
 
-<div class="container" id="carusselContainer">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="thumbnail">
-       <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <div class="item active">
-            <img class="img-responsive" src="https://s3.amazonaws.com/stcawsbucket/uploads/blog_images/fashion2.jpg">
-            <div class="carousel-caption">
-              <h3>Buy latest fashion</h3>
-              <p>We give you the best fashion on the internet</p>
-            </div> 
-          </div>
-
-          <div class="item">
-            <img class="img-responsive" src="http://cdn1.theodysseyonline.com/files/2016/01/27/635894576889786368-2047180225_aptopix-fashion-theyskens-theory-fall-2012-backstage.jpg">
-            <div class="carousel-caption">
-              <h3>Spring is here!!</h3>
-              <p>See our new spring clothing</p>
-            </div> 
-          </div>
-
-          <div class="item">
-            <img class="img-responsive" src="http://p2pmailing.co.uk/wp-content/uploads/2013/10/Fashion-And-Modern-Youth.jpg">
-            <div class="carousel-caption">
-              <h3>SALE</h3>
-              <p>Check out our sale</p>
-            </div> 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-md-4" id="rightBoxSale">
-    <div class="thumbnail">
-      <img class="img-responsive" src="http://store.vickerey.com/blog/wp-content/uploads/2014/11/final-sale-on-sale-ends-blog.jpg">
-    </div>
-  </div>
-</div>
-
-<div class="row" id="paragraphs">
-  <div class="col-md-12" >
-    <p>Mobiles</p><p>:</p><p>Mobiles</p><p>:</p><p>Clothe</p><p>:</p><p>Fashion</p><p>:</p><p>Stuff</p><p>:</p><p>Whatever</p><p>:</p><p>Sass compiler sucks</p><p>:</p><p>Books</p><p>:</p><p>Socks</p>
-  </div>
-</div>
-
-<div class="row" id="discountRow">
-  <div class="col-md-4">
-    <div class="thumbnail" id="tn1">
-      <h2>20% off on mobiles & more.*</h2>
-      <ul id="list">
-        <li><a href="">Apple mobile</a></li>
-        <li><a href="">Samsung mobile</a></li>
-        <li><a href="">Microsoft mobile</a></li>
-        <li><a href="">Nokia mobile</a></li>
-        <li><a href="">HTC mobile</a></li>
-        <li><a href="">Sony mobile</a></li>
-      </ul>
-    </div>    
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail" id="tn2">
-      <h2>50% off on fashion wear & more.*</h2>
-      <ul id="list">
-        <li><a href="">Bags and wallets</a></li>
-        <li><a href="">Belts</a></li>
-        <li><a href="">Bootes</a></li>
-        <li><a href="">Cold weather</a></li>
-        <li><a href="">Jewelery</a></li>
-        <li><a href="">Ties and hats</a></li>
-      </ul>
-    </div>    
-  </div>
-  <div class="col-md-4">
-    <div class="thumbnail" id="tn3">
-      <h2>20% off active wear & more.*</h2>
-      <ul id="list">
-        <li><a href="">Bras</a></li>
-        <li><a href="">Hair accesories</a></li>
-        <li><a href="">Hats and gloves</a></li>
-        <li><a href="">Lifestyle</a></li>
-        <li><a href="">Scarfes</a></li>
-        <li><a href="">Small leathers</a></li>
-      </ul>
-    </div>    
-  </div>
-</div>  
-
-<h2>Latest products</h2>
-<div class="row text-center" id="latestProducts">
-  <div class="col-sm-2" ng-repeat="product in products">
-    <div class="thumbnail">
-      <img class="img-responsive" ng-src="{{product.image}}">
-      <p id="p1">{{product.name}}</p>
-      <div class="rating">
-        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-      </div>
-      <p id="p2"><strike>RS 499</strike> [30% OFF]</p>
-      <p id="p3">RS {{product.price}}</p>
-      <button ng-click="purchase(product)" id="productButton">Buy</button>
-    </div>
-  </div>
-</div>
-
-</div>
-
+<div data-ng-view></div>
 
 <div class="container-fluid" style="background-color: #406884">
   <div class="container">
     <div class="row" id="topFooterRow">
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center1">
+          <tr>
             <td>
-              <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Transport-Airplane-Take-Off-icon.png"/>
+              <img src="http://andersbchristensen.com/airplaneLogo1.png" alt=""/>
             </td>
             <td>
               <p>FREE SHIPPING</p>
-              <p id="p2">In Order Min $200</p>
+              <p id="p2-1">In Order Min $200</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>  
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center2">
+          <tr>
             <td>
-              <img src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Ecommerce-Return-Purchase-icon.png"/>
+              <img src="http://andersbchristensen.com/clockLogo1.png" alt=""/>
             </td>
             <td>
               <p>30-DAYS RETURNS</p>
-              <p id="p2">Money Back Guarentee</p>
+              <p id="p2-2">Money Back Guarentee</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>
       <div class="col-md-4">
         <div class="center-block">
-          <table align="center">
+          <table id="center3">
+          <tr>
             <td>
-              <img src="http://simpleicon.com/wp-content/uploads/phone-support.png"/>
+              <img src="http://andersbchristensen.com/supportLogo1.png" alt=""/>
             </td>
             <td>
               <p>24/7 SUPPORT</p>
-              <p id="p2">Lifetime Support</p>
+              <p id="p2-3">Lifetime Support</p>
             </td>
+            </tr>
           </table>
         </div>
       </div>
     </div>
   </div>
 </div>
-</div> 
 
 <div class="container-fluid" style="background-color: #38464F">
   <div class="container">
     <div class="row" id="middleFooterRow">
       <div class="col-md-2">
         <h2>Help</h2>
-        <ul id="list">
+        <ul class="list">
           <li><a href="">Contact cusomer service</a></li>
           <li><a href="">Scorecard</a></li>
           <li><a href="">Product availability</a></li>
@@ -328,7 +232,7 @@
       </div> 
       <div class="col-md-2">
         <h2>Company</h2>
-        <ul id="list">
+        <ul class="list">
           <li><a href="">About us</a></li>
           <li><a href="">Affiliate program</a></li>
           <li><a href="">Careers</a></li>
@@ -339,7 +243,7 @@
       </div> 
       <div class="col-md-2">
         <h2>My account</h2>
-        <ul id="list">
+        <ul class="list">
           <li><a href="">Your account</a></li>
           <li><a href="">Informations</a></li>
           <li><a href="">Addresses</a></li>
@@ -350,7 +254,7 @@
       </div> 
       <div class="col-md-2">
         <h2>Informations</h2>
-        <ul id="list">
+        <ul class="list">
           <li><a href="">Terms and conditions</a></li>
           <li><a href="">About us</a></li>
           <li><a href="">Sitemap</a></li>
@@ -368,10 +272,10 @@
         </div>
         <h3>Follow us</h3>
         <div class="searchWrapper2">
-          <img src="http://andersbchristensen.com/1461766130_facebook.png">
-          <img src="http://andersbchristensen.com/1461766134_twitter.png">
-          <img src="http://andersbchristensen.com/1461766139_youtube.png">
-          <img src="http://andersbchristensen.com/1461766144_linkedin.png">
+          <img src="http://andersbchristensen.com/1461766130_facebook.png" alt="">
+          <img src="http://andersbchristensen.com/1461766134_twitter.png" alt="">
+          <img src="http://andersbchristensen.com/1461766139_youtube.png" alt="">
+          <img src="http://andersbchristensen.com/1461766144_linkedin.png" alt="">
         </div>
       </div> 
     </div>
@@ -395,7 +299,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="myModal" role="dialog" data-ng-controller="ModalBasket">
   <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -404,16 +308,18 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Basket</h4>
       </div>
-      <div class="modal-body" ng-repeat="item in filtered = (basket | filter: query) track by $index">
+      <div class="modal-body" data-ng-repeat="item in filtered = (basket | filter: query) track by $index">
 
         <table>
+        <tr>
           <td>
-            <img ng-src="{{item.image}}">
+            <img data-ng-src="{{item.image}}" src="file://null" alt="">
           </td>
           <td>
             <h3>{{item.name}}</h3>
             <p>RS {{item.price}}</p>
           </td>
+          </tr>
         </table>
       </div>
       <h3 id="nrItemsBasket">Number of items in basket: {{filtered.length}}</h3>

@@ -76,19 +76,20 @@ body{
 	margin-top: 24px;
 	margin-bottom: 12px;
 	height:40px;
-	width: 90%;
+	width: 100%;
 	background-color: white;
 	display:block;
 }
 
 #textInputBox p{
 	padding:13px;
+	width: -1%;
 }
 
 #searchField{
 	float:right;
 	height:100%;
-	width: 65%;
+	width: 50%;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
@@ -131,7 +132,7 @@ body{
 	@include border-radius(0.5em);
 }
 
-#customBtn{
+.customBtn {
 	padding: 3px;
 	padding-right:10px;
 	padding-bottom: 15px;
@@ -149,7 +150,13 @@ body{
 {
 	background-color: #406884;
 
-	#pngCenter
+	img
+	{
+	height: 25px;
+	width: 25px;
+	}
+
+	#pngCenter1, #pngCenter2, #pngCenter3, #pngCenter4, #pngCenter5, #pngCenter6 
 	{
 		position: relative; 
 		left: 0; 
@@ -174,7 +181,7 @@ body{
 					.center-block
 					{
 						max-width:400px;
-						p
+						a
 						{
 							color:white;
 						}
@@ -502,6 +509,10 @@ body{
 		{
 			color: gray; 
 			margin-bottom: 5px;
+				a
+				{
+					text-decoration:line-through;
+				}
 		}
 		#p3
 		{
@@ -550,7 +561,7 @@ body{
 					color: white; 
 					font: 100% $bold-font;
 				}
-				#p2
+				#p2-1, #p2-2, #p2-3
 				{
 					font: 100% $light-font;
 				}
@@ -635,12 +646,12 @@ body{
 	}
 }
 
-#list ul {
+.list ul {
     margin: 0.75em 0;
     padding: 0 1em;
     list-style: none;
 }
-#list li:before { 
+.list  li:before { 
     content: "";
     border-color: transparent #379AFF;
     border-style: solid;
@@ -663,6 +674,13 @@ body{
 	input[type="text"]{
 		height:40px;
 	}
+}
+
+#center1, #center2, #center3, #center4, #center5, #center6
+{
+	text-align:center;
+	 margin-left:auto; 
+	 margin-right:auto;
 }
 
 .modal-content{
@@ -712,3 +730,36 @@ body{
 	}
 }
 
+.fixedElement {
+    background-color: #c0c0c0;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+
+#productRow
+{
+	margin-top: 4%;
+	margin-bottom: 4%;
+	background-color: white;
+	padding: 10px;
+	a
+	{
+		text-align:left;
+		font-size: 20px;
+		font-weight:bold;
+	}
+	p
+	{
+		color: gray;
+	}
+	h1
+	{
+		color: #1B99FD;
+	}
+	.col-md-6 img
+	{
+	border: 2px;
+	}
+}

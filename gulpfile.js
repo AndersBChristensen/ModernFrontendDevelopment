@@ -28,8 +28,6 @@ gulp.task('vendor.js', function () {
         return -1 !== file.indexOf('.js');
     });
 
-    console.log(jsBowerFiles);
-
     return (gulp.src(jsBowerFiles)
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest(config.publicDir + '/assets')));
@@ -38,6 +36,7 @@ gulp.task('vendor.js', function () {
 gulp.task('default', ['css', 'fonts', 'vendor.js']);
 
 //Watch task
-gulp.task('default',function() {
+gulp.task('watch', function() {
+    gulp.start('default');
     gulp.watch(config.sourceDir + '/sass/**/*.scss',['css']);
 });

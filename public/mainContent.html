@@ -1,0 +1,113 @@
+
+<div class="container" id="carusselContainer">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="thumbnail">
+       <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img class="img-responsive" src="https://s3.amazonaws.com/stcawsbucket/uploads/blog_images/fashion2.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>Buy latest fashion</h3>
+              <p>We give you the best fashion on the internet</p>
+            </div> 
+          </div>
+
+          <div class="item">
+            <img class="img-responsive" src="http://cdn1.theodysseyonline.com/files/2016/01/27/635894576889786368-2047180225_aptopix-fashion-theyskens-theory-fall-2012-backstage.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>Spring is here!!</h3>
+              <p>See our new spring clothing</p>
+            </div> 
+          </div>
+
+          <div class="item">
+            <img class="img-responsive" src="http://p2pmailing.co.uk/wp-content/uploads/2013/10/Fashion-And-Modern-Youth.jpg" alt="">
+            <div class="carousel-caption">
+              <h3>SALE</h3>
+              <p>Check out our sale</p>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4" id="rightBoxSale">
+    <div class="thumbnail">
+      <img class="img-responsive" src="http://store.vickerey.com/blog/wp-content/uploads/2014/11/final-sale-on-sale-ends-blog.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+<div class="row" id="paragraphs">
+  <div class="col-md-12" >
+    <p>Mobiles</p><p>:</p><p>Mobiles</p><p>:</p><p>Clothe</p><p>:</p><p>Fashion</p><p>:</p><p>Stuff</p><p>:</p><p>Whatever</p><p>:</p><p>Sass compiler sucks</p><p>:</p><p>Books</p><p>:</p><p>Socks</p>
+  </div>
+</div>
+
+<div class="row" id="discountRow">
+  <div class="col-md-4">
+    <div class="thumbnail" id="tn1">
+      <h2>20% off on mobiles & more.*</h2>
+      <ul class="list">
+        <li><a href="">Apple mobile</a></li>
+        <li><a href="">Samsung mobile</a></li>
+        <li><a href="">Microsoft mobile</a></li>
+        <li><a href="">Nokia mobile</a></li>
+        <li><a href="">HTC mobile</a></li>
+        <li><a href="">Sony mobile</a></li>
+      </ul>
+    </div>    
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail" id="tn2">
+      <h2>50% off on fashion wear & more.*</h2>
+      <ul class="list">
+        <li><a href="">Bags and wallets</a></li>
+        <li><a href="">Belts</a></li>
+        <li><a href="">Bootes</a></li>
+        <li><a href="">Cold weather</a></li>
+        <li><a href="">Jewelery</a></li>
+        <li><a href="">Ties and hats</a></li>
+      </ul>
+    </div>    
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail" id="tn3">
+      <h2>20% off active wear & more.*</h2>
+      <ul class="list">
+        <li><a href="">Bras</a></li>
+        <li><a href="">Hair accesories</a></li>
+        <li><a href="">Hats and gloves</a></li>
+        <li><a href="">Lifestyle</a></li>
+        <li><a href="">Scarfes</a></li>
+        <li><a href="">Small leathers</a></li>
+      </ul>
+    </div>    
+  </div>
+</div>  
+
+<h2>Latest products</h2>
+<div class="row text-center" id="latestProducts">
+  <div class="col-sm-2" data-ng-repeat="product in products">
+    <div class="thumbnail">
+      <img class="img-responsive" data-ng-src="{{product.image}}" src="file://null" alt="">
+      <a href="/index.html#/product/{{product.id}}" id="p1">{{product.name}}</p></a>
+      <div class="rating">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+      </div>
+      <p id="p2"><a>RS 499</a> [30% OFF]</p>
+      <p id="p3">RS {{product.price}}</p>
+      <button data-ng-click="purchase(product)" id="productButton">Buy</button>
+    </div>
+  </div>
+</div>
