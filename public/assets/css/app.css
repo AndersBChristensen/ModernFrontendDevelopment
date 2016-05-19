@@ -6778,6 +6778,7 @@ body {
     background-color: #2C3942; }
 
 .fixedElement {
+  border-bottom: 4px solid #379AFE;
   background-color: #2C3942;
   position: fixed;
   padding-top: 10px;
@@ -6840,15 +6841,18 @@ body {
   margin-top: 4%;
   margin-bottom: 4%;
   background-color: white;
-  padding: 10px; }
+  padding: 20px; }
+  #productRow img {
+    border: 1px;
+    border-style: solid;
+    border-color: #333333 #222222; }
   #productRow a {
     text-align: left;
     font-size: 20px;
     font-weight: bold; }
   #productRow p {
     color: gray;
-    font-size: 16px; }
+    font-size: 16px;
+    padding-bottom: 10px; }
   #productRow h1 {
     color: #406884; }
-  #productRow .col-md-6 img {
-    border: 2px; }
