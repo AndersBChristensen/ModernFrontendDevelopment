@@ -1,3 +1,12 @@
+<style>
+  #alert-box {
+    display: none;
+  }
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+
 
 <div class="alert alert-success" id="alert-box">
     <a href="#" class="close" data-dismiss="alert">&times; LUK</a>
@@ -122,8 +131,10 @@
 <script>
     (function () {
         $("#productButton").on('click', function () {
+            window.scrollTo(0,0);
             $("#alert-box").slideDown("slow");
             $(this).addClass('hide');
+
         });
         $(".close").on('click', function () {
             $("#alert-box").slideUp("slow");
