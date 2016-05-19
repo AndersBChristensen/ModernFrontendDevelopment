@@ -1,4 +1,6 @@
 
+
+
 <div class="container" id="carusselContainer">
   <div class="row">
     <div class="col-md-8">
@@ -83,7 +85,7 @@
   </div>
   <div class="col-md-4">
     <div class="thumbnail" id="tn3">
-      <h2>20% off active wear & more.*</h2>
+      <h2>20% off active wear &amp; more.*</h2>
       <ul class="list">
         <li><a href="">Bras</a></li>
         <li><a href="">Hair accesories</a></li>
@@ -100,8 +102,10 @@
 <div class="row text-center" id="latestProducts">
   <div class="col-sm-2" data-ng-repeat="product in products">
     <div class="thumbnail">
-      <img class="img-responsive" data-ng-src="{{product.image}}" src="file://null" alt="">
-      <a href="/index.html#/product/{{product.id}}" id="p1">{{product.name}}</p></a>
+      <div class="img-wrapper">
+          <img class="img-responsive" data-ng-src="{{product.image}}" src="file://null" alt="400">
+      </div>
+      <div href="/index.html#/product/{{product.id}}" class="caption text-center" id="p1">{{product.name}}</div>
       <div class="rating">
         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       </div>

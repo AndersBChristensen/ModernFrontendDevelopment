@@ -490,10 +490,29 @@ body{
 	background-color: white; 
 	margin-bottom: 2%; 
 	border-top: 4px solid #379AFE;
+
+	.thumbnail img{
+    	max-width: 100%; /* do not stretch the bootstrap column */
+	}
+
+	.img-wrapper{
+		width: 100%;
+		padding-bottom: 150%; /* your aspect ratio here! */
+		position: relative;
+	}
+
+	.img-wrapper img{
+		position: absolute;
+		top: 0; 
+		bottom: 0; 
+		left: 0; 
+		right: 0;
+	}
 	.thumbnail
 	{
 		padding: 10px; 
 		margin-top: 20px;
+		min-height: 400px;
 		img
 		{
 			height: auto; 
@@ -736,6 +755,10 @@ body{
     top:0;
     width:100%;
     z-index:100;
+}
+
+.alert{
+  display:none;
 }
 
 #productRow
