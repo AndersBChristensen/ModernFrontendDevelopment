@@ -6597,6 +6597,9 @@ body {
   content: "\2605";
   position: absolute; }
 
+#alert-box {
+  display: none; }
+
 #latestProducts {
   background-color: white;
   margin-bottom: 2%;
@@ -6617,8 +6620,7 @@ body {
     right: 0; }
   #latestProducts .thumbnail {
     padding: 10px;
-    margin-top: 20px;
-    min-height: 400px; }
+    margin-top: 20px; }
     #latestProducts .thumbnail img {
       height: auto;
       width: 100%; }

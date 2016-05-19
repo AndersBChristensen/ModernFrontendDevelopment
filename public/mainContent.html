@@ -1,5 +1,8 @@
 
-
+<div class="alert alert-success" id="alert-box">
+    <a href="#" class="close" data-dismiss="alert">&times; LUK</a>
+    Hey hey
+</div>
 
 <div class="container" id="carusselContainer">
   <div class="row">
@@ -115,3 +118,16 @@
     </div>
   </div>
 </div>
+
+<script>
+    (function () {
+        $("#productButton").on('click', function () {
+            $("#alert-box").slideDown("slow");
+            $(this).addClass('hide');
+        });
+        $(".close").on('click', function () {
+            $("#alert-box").slideUp("slow");
+            $("#productButton").removeClass('hide');
+        });
+    })(jQuery);
+</script>

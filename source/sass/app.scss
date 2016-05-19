@@ -485,6 +485,10 @@ body{
    position: absolute;
 }
 
+#alert-box {
+            display: none;
+        }
+
 #latestProducts
 {
 	background-color: white; 
@@ -512,7 +516,6 @@ body{
 	{
 		padding: 10px; 
 		margin-top: 20px;
-		min-height: 400px;
 		img
 		{
 			height: auto; 
