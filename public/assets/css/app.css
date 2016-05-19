@@ -6778,11 +6778,63 @@ body {
     background-color: #2C3942; }
 
 .fixedElement {
-  background-color: #c0c0c0;
+  background-color: #2C3942;
   position: fixed;
+  padding-top: 10px;
   top: 0;
   width: 100%;
   z-index: 100; }
+  .fixedElement p {
+    text-align: center;
+    color: white;
+    font: 100% "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.hidden {
+  visibility: hidden;
+  opacity: 0; }
+
+.shown {
+  visibility: visible;
+  transition: opacity 500ms;
+  opacity: 1; }
+
+.xfixedElement {
+  -webkit-animation: seconds 1.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 5s;
+  animation: seconds 1.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 5s; }
+
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    left: -9999px;
+    visibility: hidden; } }
+
+@keyframes seconds {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    left: -9999px;
+    visibility: hidden; } }
+
+#productDetailBtn {
+  margin-top: 5%;
+  font-size: 20px;
+  font-weight: regular;
+  min-width: 40%;
+  max-width: 100%;
+  border: none;
+  color: white;
+  background-color: #406884;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0.3em; }
 
 #productRow {
   margin-top: 4%;
@@ -6794,8 +6846,9 @@ body {
     font-size: 20px;
     font-weight: bold; }
   #productRow p {
-    color: gray; }
+    color: gray;
+    font-size: 16px; }
   #productRow h1 {
-    color: #1B99FD; }
+    color: #406884; }
   #productRow .col-md-6 img {
     border: 2px; }

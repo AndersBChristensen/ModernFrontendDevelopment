@@ -1,16 +1,5 @@
-<style>
-  #alert-box {
-    display: none;
-  }
-</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
-
-<div class="alert alert-success" id="alert-box">
-    <a href="#" class="close" data-dismiss="alert">&times; LUK</a>
-    Hey hey
+<div class="fixedElement" ng-class="{'hidden': !popupShown, 'shown': popupShown}" id="fixedElement">
+  <p><b>{{currentProduct.name}}</b> was added to the basket</p>
 </div>
 
 <div class="container" id="carusselContainer">
@@ -117,7 +106,7 @@
       <div class="img-wrapper">
           <img class="img-responsive" data-ng-src="{{product.image}}" src="file://null" alt="400">
       </div>
-      <div href="/index.html#/product/{{product.id}}" class="caption text-center" id="p1">{{product.name}}</div>
+      <div class="caption text-center" id="p1"><a href="/index.html#/product/{{product.id}}">{{product.name}}</a></div>
       <div class="rating">
         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       </div>
@@ -127,18 +116,3 @@
     </div>
   </div>
 </div>
-
-<script>
-    (function () {
-        $("#productButton").on('click', function () {
-            window.scrollTo(0,0);
-            $("#alert-box").slideDown("slow");
-            $(this).addClass('hide');
-
-        });
-        $(".close").on('click', function () {
-            $("#alert-box").slideUp("slow");
-            $("#productButton").removeClass('hide');
-        });
-    })(jQuery);
-</script>
