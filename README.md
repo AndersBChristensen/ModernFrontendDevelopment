@@ -3,3 +3,5 @@ Some cool ecommerce frontend site!!!!
 
 ## Link to website
 http://andersbchristensen.com/EcommerceSite/public/index.html#/
+
+![alt-text-1](https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/mocart-ecommerce-PSD-Template-01.jpg)
