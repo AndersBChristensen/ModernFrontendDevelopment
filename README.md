@@ -1,5 +1,5 @@
-# ModernFrontendDevelopment
-Some cool ecommerce frontend site!!!!
+# Modern Frontend Development
+From template to website. Exam project.
 
 ## Link to website
 http://andersbchristensen.com/EcommerceSite/public/index.html#/
