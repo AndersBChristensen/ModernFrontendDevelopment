@@ -1,5 +1,5 @@
 # Modern Frontend Development
-From template to website. Exam project.
+From template to website. Exam project 2 semester.
 
 ## Link to website
 http://andersbchristensen.com/EcommerceSite/public/index.html#/
